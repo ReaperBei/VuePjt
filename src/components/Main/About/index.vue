@@ -6,12 +6,12 @@
         <div class="flx justify-cent">
           <div
             class="flx justify-cent relation-tab padding-10"
-            v-for="(ietm, index) in list"
+            v-for="(ietm, index) in content"
             :key="index"
             v-on:click="addClass(index,$event)"
             v-bind:class="{ blue:index==$store.state.login.tabIndex}"
           >
-            <router-link :to="ietm.dizhi" class="nav-tab font-16">{{ietm.text}}</router-link>
+            <router-link :to="ietm.site" class="nav-tab font-16">{{ietm.name}}</router-link>
           </div>
         </div>
       </div>
@@ -20,20 +20,14 @@
   </div>
 </template>
 <script>
+import {api} from 'api'
+import {summtab} from 'api/request.js'
 import comImg from './common/index'
 export default {
   data () {
     return {
-      current: 0,
-      list: [{
-        text: '企业概述', dizhi: 'Summarize'
-      }, {
-        text: '品牌故事', dizhi: 'Brand'
-      }, {
-        text: '资质荣誉', dizhi: 'Honor'
-      }, {
-        text: '资质视频', dizhi: 'Video'
-      }]
+      api,
+      content: []
     }
   },
   components: {
@@ -43,6 +37,11 @@ export default {
     addClass (index, event) {
       this.$store.state.login.tabIndex = index
     }
+  },
+  mounted () {
+    summtab((data) => {
+      this.content = data.data
+    })
   }
 }
 </script>

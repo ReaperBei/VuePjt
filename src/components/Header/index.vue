@@ -206,16 +206,14 @@ export default {
       this.current = index
       this.$store.commit('chang', index)
     },
-    addIndex (index,event) {
-      var index = 0
+    addIndex (index, event) {
       this.$store.commit('chang', index)
     },
     addtabIndex (index, event) {
       this.current = index
-      this.$store.commit('chang', (index+1))
+      this.$store.commit('chang', (index + 1))
     },
-    addInd (index,event) {
-      var index = 0
+    addInd (index, event) {
       this.$store.commit('chang', index)
     }
   }

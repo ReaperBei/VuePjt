@@ -7,12 +7,12 @@
       <div class="flx justify-cent">
         <div
           class="flx justify-cent relation-tab padding-10"
-          v-for="(ietm, index) in todos"
+          v-for="(ietm, index) in current"
           :key="index"
           v-on:click="addClass(index,$event)"
           v-bind:class="{blue:index==$store.state.login.tabIndex}"
         >
-          <router-link :to="ietm.dizhi" class="nav-tab">{{ietm.text}}</router-link>
+          <router-link :to="ietm.site" class="nav-tab">{{ietm.name}}</router-link>
         </div>
       </div>
       <div class="container">
@@ -22,20 +22,22 @@
   </div>
 </template>
 <script>
+import {serve} from 'api/request.js'
 export default {
   data () {
     return {
-      current: 0,
-      todos: [
-        {text: '招商加盟', dizhi: 'Merchants'},
-        {text: '联系我们', dizhi: 'Relation'}
-      ]
+      current: []
     }
   },
   methods: {
     addClass: function (index, event) {
       this.$store.state.login.tabIndex = index
     }
+  },
+  mounted () {
+    serve((data) => {
+      this.current = data.data
+    })
   }
 }
 </script>

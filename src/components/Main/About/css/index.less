@@ -39,26 +39,34 @@
             vertical-align: middle;
             text-align: center;
             display: flex;
-            padding-bottom:15px;
-            .video-content{
+            margin-bottom:15px;
+            .video-content-ation{
                 position: absolute;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                padding: 20px;
-                color: #fff;
-                .vertical-align-middle{
-                    position: relative;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    .video-ledgement{
-                        display: block;
-                        width: 20px;
-                        height: 2px;
-                        margin: 10px auto;
-                        background-color: white;
+                background: rgba(0, 0, 0, .5);
+                .video-content{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    padding: 20px;
+                    color: #fff;
+                    .vertical-align-middle{
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        .video-ledgement{
+                            display: block;
+                            width: 20px;
+                            height: 2px;
+                            margin: 10px auto;
+                            background-color: white;
+                        }
                     }
                 }
             }
@@ -78,17 +86,17 @@
     }
 }
 @media (min-width:100px) and (max-width:768px){  
-    .video-box li{
+    .video-box .video-list,.video-box .video-show{
         width: 100%;
     }
 }
 @media (min-width:768px){
-    .video-box li{
+    .video-box .video-list,.video-box .video-show{
         width: 49%;
     }
 }
 @media (min-width:992px){
-    .video-box li{
+    .video-box .video-list,.video-box .video-show{
         width: 23%;
     }
     .advertising-content{
@@ -101,18 +109,9 @@
             }
         }
     }
-    // .video-box {
-    //     li {
-    //         .video-box-content {
-    //             .video-content{
-    //                 padding: 50px;
-    //             }
-    //         }
-    //     }
-    // }
 }
 @media (min-width:1200px){
-    .video-box li{
+    .video-box .video-list,.video-box .video-show{
         width: 23%;
     }
     .advertising-content{

@@ -38,6 +38,7 @@ module.exports = {
       '@': resolve('src'),
       'cmp': resolve('src/components'),
       'comcolor': resolve('src/css/common.less'),
+      'api':resolve('src/components/api'),
     }
   },
   module: {
